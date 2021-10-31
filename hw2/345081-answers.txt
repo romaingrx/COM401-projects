@@ -1,0 +1,10 @@
+Sciper = 345081
+Worked with (list all): 284001
+Q1a_C='by1QV0JTSjBELUxPQlNULVdMTC1EUFdELUxJSlEteVNECS1WQ0QtRFBTRlMtT0UtRUlLU0RQT0pRLW8tUk9GS0x5LVZTTE9TQlMtT0p+LWRQUy1IU0lITFMtQVBJLVBXQlMtRFBTLVdWT0xPRHktREktVVBXSlFTLUVJS1NEUE9KUS1PSi1EUE9FLUFJRkxUCS1XTEwtQU9EUElDRC1TelVTSERPSUoJLVBXQlMtRFBTLVFDREUtREktV1ZXSlRJSi1EUE9KUUUtT0tISUZEV0pELURJLURQU0stT1ItRFBTeS1QV0JTLURJfi1kUFN5LVdGUy1EUElFUy1BUEktVVdKLVdWV0pUSUotU0JTSi1EUFNPRi1QQ0tXSk9EeX4tDHdGS09KLXdGTFNMRAktZVBPSlFTTU8tSkktbXlJTk9KCw=='
+Q1b_M="All I ever gained from abandoning something and running away were regrets I couldn't do anything about, and a version of myself that could only resent others. If I come to hate myself, even living becomes a sin. Remorse alone will become my punishment. That's why I've decided to take action of my own free will, so I'll never have the same regrets again. (Amane Suou, Grisaia no Rakuen)"
+Q1c_M='If one side is putting all their efforts into killing a normal high school student and the other side is putting all their efforts into saving that normal high school student, which side do you want to be on? Which side could you proudly say you were on? (Mikoto Misaka, Toaru Majutsu no Index)'
+Q1c_K=(17, 101)
+Q2_msg=93379290466859644140053949581171036990561071077532357026619267796754818820952638818345438279834401357140213785111858955067342841035199804326916106642923228739122205294883441546396952752705502064989236717694795246487259761111018873289413869077785031742234197963297909352496141723555751876901105514182710471391
+Q2_max=2023211
+Q2_min=15
+Q3_pt="fett boba kessel padm skywalker kpo palpatine dantooine vader. naboo kamino lars alderaan solo sith moff. leia yavin darth solo. mon boba organa quigonn solo. coruscant mace windu quigon. aayla hutt mothma fett greedo cade. quigonn mon amidala luuke. tusken raider dagobah moff padm. solo wookiee jar antilles organa mandalorians coruscant mara. fisto jar organa sidious twilek kenobi obiwan. skywalker baba coruscant antilles. calrissian moff padm organa binks. bothan obiwan utapau mandalorians darth ben dantooine solo mandalore."

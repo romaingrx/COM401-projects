@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author : Romain Graux
-@date : 2021 Oct 30, 12:28:36
-@last modified : 2021 Oct 30, 12:55:56
+@author : Romain Graux (345081) & Thomas Benchetrit (284001)
+@date : 2021 Oct 30, 12:21:25
+@last modified : 2021 Oct 31, 21:30:39
 """
 
-import re, sys
+import re, sys, ast
 
 
 def get_value_from_parameters(filename: str, key: str):
@@ -17,11 +17,4 @@ def get_value_from_parameters(filename: str, key: str):
         if len(z):
             print("Found several matches for key `{key}` : ", z, file=sys.stderr)
         return None
-    return z[0].replace("'", '"')  # TODO: replace?
-
-
-if __name__ == "__main__":
-    import json
-
-    value = get_value_from_parameters("345081-parameters.txt", "Q3_dict")
-    print(json.loads(value))
+    return ast.literal_eval(z[0])
