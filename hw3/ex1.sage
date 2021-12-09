@@ -6,15 +6,14 @@
 @last modified : 2021 Dec 08, 11:48:29
 """
 
-from tqdm import tqdm
 from utils import get_values_from_parameters
 from sage.all import EllipticCurve, GF, GCD, power_mod
-
-# from tqdm import tqdm
+from tqdm import tqdm
 
 PARAMETERS_FILENAME = "345081-parameters.txt"
 
-print("=== FIRST PART ===")
+# === FIRST PART ===
+
 p, r, h = get_values_from_parameters(PARAMETERS_FILENAME, ("Q1_p", "Q1_r", "Q1_h"))
 q = p ** h
 
@@ -32,8 +31,7 @@ EK = E.base_extend(K)
 # Define the phi function
 phi = lambda h: EK(-h[0], i * h[1])
 
-
-def e_circ(g1: tuple, g2: tuple):
+def e_circ(g1:tuple, g2:tuple):
     """
     :param g1: the first point on the EC
     :param g2: the first point on the EC
@@ -44,7 +42,6 @@ def e_circ(g1: tuple, g2: tuple):
 
 
 g = get_values_from_parameters(PARAMETERS_FILENAME, (f"Q1_g1", f"Q1_g2"))
-
 
 def is_valid_SDH(index: int) -> bool:
     """
@@ -57,6 +54,30 @@ def is_valid_SDH(index: int) -> bool:
     return e_circ(gx, gx) == e_circ(g, gz)
 
 
-print("Calculating the valid SDH pairs")
+# print("Calculating the valid SDH pairs")
 Q1_k = [i for i in tqdm(range(1, 21)) if is_valid_SDH(i)]
-print("Q1_k = ", Q1_k)
+print("Q1_k=", Q1_k)
+
+# === SECOND PART ===
+
+q, x0, y0 = get_values_from_parameters(PARAMETERS_FILENAME, ("Q1_q", "Q1_x0", "Q1_y0"))
+
+variables = x, y, A, B = var("x y A B")
+
+equations = (
+    x0 ** 3 + A * x0 + B - y0 ** 2,
+    x ** 3 + A * x + B - y ** 2,
+    (x + 1) ** 3 + A * (x + 1) + B - y ** 2,
+    (x + 2) ** 3 + A * (x + 2) + B - y ** 2,
+)
+
+solutions = solve(equations, variables, solution_dict=True)
+
+a = solutions[0][A]
+b = (solutions[0][B]).mod(q)
+j_invariant = 1728 * (4 * (a^3)) / (4 * (a^3) + 27 * (b^2))
+j_num, j_den = j_invariant.numerator(), j_invariant.denominator()
+g = gcd(j_num, j_den)
+
+print("Q1_a=", j_num / g)
+print("Q1_b=", j_den / g)
