@@ -43,7 +43,6 @@ def attack_paillier_lsb(c, decrypt_lsb, n, steps=None):
         bounds[1 - lsb] = sum(bounds) / 2
         upper_bound, lower_bound = floor(bounds[1]), ceil(bounds[0])
         if lower_bound == upper_bound:
-            print()
             return lower_bound
 
         print(f"Step {step}/{steps}", end="\r")
@@ -62,18 +61,17 @@ if UNIT_TEST:
             return random_unit_element(n)
         return a
 
-    # r = random_unit_element(n)  # The random value in Z_n^*
-    r = 1
+    r = random_unit_element(n)  # The random value in Z_n^*
     message = 42  # The message
-    c = (g ** message) * (r ** n) % (n * n)
-    # c = (
-    #     power_mod(g, message, n * n) * power_mod(r, n, n * n) % (n * n)
-    # )  # Encrypt message
-    decrypted_message = attack_paillier_lsb(c, LSB, n, steps=4096)
-    print(decrypted_message)
+    c = (
+        power_mod(g, message, n * n) * power_mod(r, n, n * n) % (n * n)
+    )  # Encrypt message
+    decrypted_message = attack_paillier_lsb(c, LSB, n)
     assert (
         decrypted_message == message
     ), f"decrypted message {decrypted_message} != message {message}"
-else:
-    m = attack_paillier_lsb(c, LSB, n)
-    print(f"Q2_m={m}")
+
+
+m = attack_paillier_lsb(c, LSB, n)
+print()
+print(f"Q2_m={m}")
