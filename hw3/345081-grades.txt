@@ -56,10 +56,10 @@
 ###     or "swapped answer [swapped with: ..., patch: PATCH]" if a swap 
 ###     is needed before applying the patch.
 
-345081  Romain Martin J, Graux                              [grade: 5.25, exact: 5.22, grant: 2.750]
+345081  Romain Martin J, Graux                              [grade: 6.00, exact: 6.00, grant: 4.000]
   Q1_J   correct answer
-  Q1_a   patched answer [patch: scale(32)] [grant: +0.750]
-  Q1_b   incorrect answer: 378858068283866... [expect: 535911439466772...]
+  Q1_a   patched answer [patch: scale(32)] [grant: +1.000]
+  Q1_b   incorrect answer: 378858068283866... [expect: 535911439466772...] [manual grade: +1.000]
   Q2_m   correct answer
   Q3a_p  swapped answer [swapped with: Q3a_q] [grant: +1.000]
   Q3a_q  swapped answer [swapped with: Q3a_p] [grant: +1.000]
